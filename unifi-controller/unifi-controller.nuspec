@@ -3,12 +3,9 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <!-- == PACKAGE SPECIFIC SECTION == -->
-    <!-- This section is about this package, although id and version have ties back to the software -->
-    <!-- id is lowercase and if you want a good separator for words, use '-', not '.'. Dots are only acceptable as suffixes for certain types of packages, e.g. .install, .portable, .extension, .template -->
-    <!-- If the software is cross-platform, attempt to use the same id as the debian/rpm package(s) if possible. -->
     <id>ubiquiti-unifi-controller</id>
     <version>3.5.8</version>
-    <packageSourceUrl>https://github.com/flcdrg/chocolatey-ubiquiti</packageSourceUrl>
+    <packageSourceUrl>https://github.com/flcdrg/chocolatey-ubiquiti/tree/master/unifi-controller</packageSourceUrl>
     <owners>flcdrg</owners>
     <!-- ============================== -->
 
@@ -22,9 +19,9 @@
     <licenseUrl>https://www.ubnt.com/eula/</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <docsUrl>https://dl.ubnt.com/guides/UniFi/UniFi_Controller_V5_UG.pdf</docsUrl>
-    <!--<mailingListUrl></mailingListUrl>-->
+    <mailingListUrl>https://community.ubnt.com/t5/custom/page/page-id/Forums</mailingListUrl>
     <!--<bugTrackerUrl></bugTrackerUrl>-->
-    <tags>unifi-controller admin SPACE_SEPARATED</tags>
+    <tags>unifi ubiquiti wifi network admin</tags>
     <summary>Ubiquiti device management software</summary>
     <description>Software for managing and controlling the following Ubiquiti products:
 	
