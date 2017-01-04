@@ -17,7 +17,7 @@ $packageArgs = @{
   url           = $url
   #file         = $fileLocation
 
-  softwareName  = 'unifi*' #part or all of the Display Name as you see it in Programs and Features. It should be enough to be unique
+  softwareName  = 'Ubiquiti UniFi*' #part or all of the Display Name as you see it in Programs and Features. It should be enough to be unique
 
   # Checksums are now required as of 0.10.0.
   # To determine checksums, you can get that from the original site if provided. 

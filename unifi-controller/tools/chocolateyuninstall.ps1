@@ -13,17 +13,17 @@
 $ErrorActionPreference = 'Stop'; # stop on all errors
 
 $packageName = 'unifi-controller'
-$softwareName = 'unifi-controller*' #part or all of the Display Name as you see it in Programs and Features. It should be enough to be unique
-$installerType = 'MSI' 
-#$installerType = 'EXE' 
+$softwareName = 'Ubiquiti UniFi*' #part or all of the Display Name as you see it in Programs and Features. It should be enough to be unique
+#$installerType = 'MSI' 
+$installerType = 'EXE' 
 
-$silentArgs = '/qn /norestart'
+#$silentArgs = '/qn /norestart'
 # https://msdn.microsoft.com/en-us/library/aa376931(v=vs.85).aspx
 $validExitCodes = @(0, 3010, 1605, 1614, 1641)
 if ($installerType -ne 'MSI') {
   # The below is somewhat naive and built for EXE installers
   # Uncomment matching EXE type (sorted by most to least common)
-  #$silentArgs = '/S'           # NSIS
+  $silentArgs = '/S'           # NSIS
   #$silentArgs = '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-' # Inno Setup
   #$silentArgs = '/s'           # InstallShield
   #$silentArgs = '/s /v"/qn"' # InstallShield with MSI
@@ -76,6 +76,10 @@ if ($key.Count -eq 1) {
   $key | % {Write-Warning "- $_.DisplayName"}
 }
 
+Write-Output "Respond to 'keep settings' dialog prompt"
+$toolsPath = Split-Path $MyInvocation.MyCommand.Definition
+$ahkScript = "$toolsPath\unifi-uninstall.ahk"
+AutoHotkey $ahkScript $packageArgs.fileFullPath
 
 ## OTHER HELPERS
 ## https://chocolatey.org/docs/helpers-reference

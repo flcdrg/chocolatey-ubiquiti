@@ -36,6 +36,7 @@
 
     <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
     <dependencies>
+	  <dependency id="autohotkey.portable" />
       <dependency id="javaruntime" version="8.0.101" />
     </dependencies>
   </metadata>
