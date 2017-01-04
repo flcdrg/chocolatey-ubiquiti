@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <!-- == PACKAGE SPECIFIC SECTION == -->
+    <!-- This section is about this package, although id and version have ties back to the software -->
+    <!-- id is lowercase and if you want a good separator for words, use '-', not '.'. Dots are only acceptable as suffixes for certain types of packages, e.g. .install, .portable, .extension, .template -->
+    <!-- If the software is cross-platform, attempt to use the same id as the debian/rpm package(s) if possible. -->
+    <id>ubiquiti-unifi-controller</id>
+    <version>3.5.8</version>
+    <packageSourceUrl>https://github.com/flcdrg/chocolatey-ubiquiti</packageSourceUrl>
+    <owners>flcdrg</owners>
+    <!-- ============================== -->
+
+    <!-- == SOFTWARE SPECIFIC SECTION == -->
+    <!-- This section is about the software itself -->
+    <title>Ubuquiti UniFI Controller</title>
+    <authors>Ubiquiti Networks Inc</authors>
+    <projectUrl>https://www.ubnt.com/download/unifi</projectUrl>
+    <iconUrl>http://cdn.rawgit.com/flcdrg/chocolatey-ubiquiti/master/icons/ubiquiti.png</iconUrl>
+    <copyright>2017 Ubiquiti Networks, Inc</copyright>
+    <licenseUrl>https://www.ubnt.com/eula/</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <docsUrl>https://dl.ubnt.com/guides/UniFi/UniFi_Controller_V5_UG.pdf</docsUrl>
+    <!--<mailingListUrl></mailingListUrl>-->
+    <!--<bugTrackerUrl></bugTrackerUrl>-->
+    <tags>unifi-controller admin SPACE_SEPARATED</tags>
+    <summary>Ubiquiti device management software</summary>
+    <description>Software for managing and controlling the following Ubiquiti products:
+	
+    UAP-AC, UAP-AC-EDU, UAP-AC-LITE, UAP-AC-LR, UAP-AC-M, UAP-AC-M-PRO, UAP-AC Outdoor, UAP-AC-PRO, UAP-IW, UAP-LR, UAP-Outdoor, UAP-Outdoor+, UAP-Outdoor5, UAP-PRO, US-16-150W, US-24, US-24-250W, US-24-500W, US-48, US-48-500W, US-48-750W, US-8-150W, USG, USG-PRO-4
+
+	</description>
+    <releaseNotes>https://community.ubnt.com/t5/UniFi-Updates-Blog/UniFi-5-3-8-Stable-has-been-released/ba-p/1755779</releaseNotes>
+    <!-- =============================== -->      
+
+    <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
+    <dependencies>
+      <dependency id="javaruntime" version="8.0.101" />
+    </dependencies>
+  </metadata>
+  <files>
+    <!-- this section controls what actually gets packaged into the Chocolatey package -->
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
