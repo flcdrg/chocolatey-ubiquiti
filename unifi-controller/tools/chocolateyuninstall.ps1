@@ -42,3 +42,18 @@ Write-Output "Respond to 'keep settings' dialog prompt"
 $toolsPath = Split-Path $MyInvocation.MyCommand.Definition
 $ahkScript = "$toolsPath\unifi-uninstall.ahk"
 AutoHotkey $ahkScript $packageArgs.fileFullPath
+
+Remove-NetFirewallRule -Name UniFi-Mgmt-In 
+Remove-NetFirewallRule -Name UniFi-Mgmt-Out
+Remove-NetFirewallRule -Name UniFi-DvcInfrm-In
+Remove-NetFirewallRule -Name UniFi-DvcInfrm-Out
+Remove-NetFirewallRule -Name UniFi-Ctrlr-In
+Remove-NetFirewallRule -Name UniFi-Ctrlr-Out
+Remove-NetFirewallRule -Name UniFi-PrtlRdr-In
+Remove-NetFirewallRule -Name UniFi-PrtlRdr-Out
+Remove-NetFirewallRule -Name UniFi-PrtlRdrSsl-In
+Remove-NetFirewallRule -Name UniFi-PrtlRdrSsl-Out
+#Remove-NetFirewallRule -Name UniFi-DB-In
+#Remove-NetFirewallRule -Name UniFi-DB-Out
+Remove-NetFirewallRule -Name UniFi-DvcDisc-In
+Remove-NetFirewallRule -Name UniFi-DvcDisc-Out

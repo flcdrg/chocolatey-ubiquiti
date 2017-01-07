@@ -11,7 +11,7 @@
 
     <!-- == SOFTWARE SPECIFIC SECTION == -->
     <!-- This section is about the software itself -->
-    <title>Ubuquiti UniFI Controller</title>
+    <title>Ubiquiti UniFI Controller</title>
     <authors>Ubiquiti Networks Inc</authors>
     <projectUrl>https://www.ubnt.com/download/unifi</projectUrl>
     <iconUrl>http://cdn.rawgit.com/flcdrg/chocolatey-ubiquiti/master/icons/ubiquiti.png</iconUrl>
