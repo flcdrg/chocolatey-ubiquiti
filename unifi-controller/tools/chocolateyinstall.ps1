@@ -21,8 +21,10 @@ $ahkScript = "$toolsDir\unifi-upgrade.ahk"
 
 $ahkProc = Start-Process -FilePath 'AutoHotkey' -ArgumentList $ahkScript -PassThru
 
-# Win8/2008 supports 'New-NetFirewallRule' - https://technet.microsoft.com/en-us/library/jj554908(v=wps.620).aspx
-if ([Environment]::OSVersion.Version.Major -ge 6) {
+# Win8/2012 supports 'New-NetFirewallRule' - https://technet.microsoft.com/en-us/library/jj554908(v=wps.620).aspx
+$osVersion = [Environment]::OSVersion.Version
+
+if ($osVersion.Major -gt 6 -or ($osVersion.Major -eq 6 -and $osVersion.Minor -ge 2)) {
     # Configure firewall for UniFi - from https://community.ubnt.com/t5/UniFi-Wireless/UniFi-AP-firewall-settings-for-Windows-Server-2012-R2/td-p/1090855
     New-NetFirewallRule -Name UniFi-Mgmt-In -DisplayName "UniFi-Mgmt (TCP-In 8081)" -Description "Allows incoming UniFi management traffic" -Group UniFi -Enabled True -Protocol TCP -LocalPort 8081 -Direction Inbound -ErrorAction SilentlyContinue
     New-NetFirewallRule -Name UniFi-Mgmt-Out -DisplayName "UniFi-Mgmt (TCP-Out 8081)" -Description "Allows outgoing UniFi management traffic" -Group UniFi -Enabled True -Protocol TCP -LocalPort 8081 -Direction Outbound -ErrorAction SilentlyContinue

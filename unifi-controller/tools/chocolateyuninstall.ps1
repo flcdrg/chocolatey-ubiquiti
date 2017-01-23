@@ -43,8 +43,10 @@ $toolsPath = Split-Path $MyInvocation.MyCommand.Definition
 $ahkScript = "$toolsPath\unifi-uninstall.ahk"
 AutoHotkey $ahkScript $packageArgs.fileFullPath
 
-# Win8/2008 supports 'Remove-NetFirewallRule' - https://technet.microsoft.com/en-us/library/jj554908(v=wps.620).aspx
-if ([Environment]::OSVersion.Version.Major -ge 6) {
+# Win8/2012 supports 'Remove-NetFirewallRule' - https://technet.microsoft.com/en-us/library/jj554908(v=wps.620).aspx
+$osVersion = [Environment]::OSVersion.Version
+
+if ($osVersion.Major -gt 6 -or ($osVersion.Major -eq 6 -and $osVersion.Minor -ge 2)) {
     Remove-NetFirewallRule -Name UniFi-Mgmt-In 
     Remove-NetFirewallRule -Name UniFi-Mgmt-Out
     Remove-NetFirewallRule -Name UniFi-DvcInfrm-In
