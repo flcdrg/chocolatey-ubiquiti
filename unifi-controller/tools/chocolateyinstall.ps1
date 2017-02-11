@@ -2,7 +2,7 @@
 
 $packageName= 'unifi-controller'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url        = 'https://dl.ubnt.com/unifi/5.4.9/UniFi-installer.exe'
+$url        = 'https://dl.ubnt.com/unifi/5.4.11/UniFi-installer.exe'
 
 $packageArgs = @{
   packageName   = $packageName
@@ -10,7 +10,7 @@ $packageArgs = @{
   fileType      = 'EXE'
   url           = $url
   softwareName  = 'Ubiquiti UniFi*'
-  checksum      = '68EA6874FD43B43810C36F40DD320A6186F88235D1919FC5F3EF48B7B0A6F05F'
+  checksum      = '9318B6A2547CE7E3AD11B347B87D18FDE25DFB29E264897E78B31469001171ED'
   checksumType  = 'sha256'
   silentArgs   = '/S'
   validExitCodes= @(0)
